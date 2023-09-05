@@ -1,0 +1,115 @@
+:root {
+    --c01: #D1DDD8;
+    --c02: #85b8cb;
+    --c03: #1D6A96;
+    --c04: #283B42;
+    --c05: #e29e93;
+    --c06: #ebe5d9;
+    --c07: #499360;
+    --c08: #ca884b;
+}
+
+body{
+    background-color:var(--c06);
+    padding-top: 15px;
+}
+
+.wrapper{
+    margin:0 auto;
+    width: 1024px;
+}
+
+.wrapper .logo{
+    width: 100%;
+    height: 200px;
+    background-color: var(--c03);
+    background-image: url(../images/sajad-fi-GI4wXur48BY-unsplash.jpg);
+    background-position: center center;
+    background-size: cover;
+}
+nav{
+    background-color: var(--c05);
+    text-align: center;
+}
+
+nav ul{
+    display: inline-block;
+}
+nav ul li{
+    float: left;
+    list-style-type: none;
+}
+nav ul li a{
+    display: block;
+    padding-top:10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: var(--c03);
+    margin-right: 2px;
+    color: var(--c02);
+    text-decoration: none;
+    font-weight:bolder;
+}
+nav ul li a:hover{
+    background-color: var(--c01);
+    color:var(--c07);
+}
+.logo1{
+    text-align: center;
+}
+.logo1 ul{
+    display: inline-block;
+}
+.logo1 ul li{
+    float: left;
+    list-style-type: none;
+}
+.logo1 ul li a{
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 60px;
+    padding-right: 60px;
+    margin-right: 10px;
+    text-decoration: none;
+    font-weight: bolder;
+    background-color: var(--c02);
+}
+.logo1 ul li a:hover{
+    background-color: var(--c01);
+    color: #000;
+}
+.content_in{
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    background-color: #fff;
+    margin-top: 5px;
+}
+.content_in h1{
+    color: red;
+    margin-bottom: 30px;
+}
+.content_in p{
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+.footer{
+    background-color:var(--c08);
+    color:var(--c04);
+    text-align: center;
+}
+.footer p{
+    font-size: 18px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 5px;
+}
+@media screen and (max-width:1024px) {
+    .wrapper{
+        width: 95%;
+    }
+}

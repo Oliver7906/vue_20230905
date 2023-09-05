@@ -1,0 +1,175 @@
+
+        :root {
+            --c01: #D1DDD8;
+            --c02: #85b8cb;
+            --c03: #1D6A96;
+            --c04: #283B42;
+            --c05: #e29e93;
+            --c06: #ebe5d9;
+            --c07: #499360;
+            --c08: #ca884b;
+        }
+
+        body {
+            background-color: var(--c06);
+            /* background-color背景顏色 */
+            padding-top: 15px;
+            /* padding-top top是改面哪個位子的間距 */
+        }
+
+        .wrapper {
+            margin: 0 auto;
+            /* margin外距 */
+            width: 1024px;
+            /* 讓所有內容在置中 */
+        }
+
+        .wrapper img {
+            width: 100%;
+            /* .wrapper img 超過原本的1024就會用100%呈現 */
+        }
+        .wrapper .logo{
+            width: 100%;
+            height: 200px;
+            background-color: var(--c03);
+            /* 背景底色 */
+            background-image: url(../images/mehdi-messrro--8m1gdgOZmU-unsplash.jpg);
+            /* background-image連結背景圖片 */
+            background-position: center center;
+            /* background-position圖片顯示位置水平置中跟上下置中 */
+            background-size: cover;
+            /* background-size: cover讓圖片適當的延展 */
+        }
+        nav {
+            background-color: var(--c05);
+            text-align: center;
+            /* text-align:center;置中 */
+        }
+
+        nav ul {
+            display: inline-block;
+            /* display:inline-block水平對其 橫的 */
+        }
+
+        nav ul li {
+            float: left;
+            /* float:left;排列變橫的 */
+            list-style-type: none;
+            /* list-style-type取消文字前的點 */
+        }
+
+        nav ul li a {
+            display: block;
+            /* display: block變成方塊 */
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            background-color: var(--c03);
+            margin-right: 2px;
+            /* margin-right 右邊間距 */
+            color: var(--c02);
+            text-decoration: none;
+            /* text-decoration超連結的取消底線*/
+            font-weight: bolder;
+            /* font-weight改變字體的粗度 */
+        }
+
+        nav ul li a:hover {
+            /* a:hover 滑鼠懸停的動作 */
+            background-color: var(--c04);
+            color: var(--c07);
+        }
+
+        .logo1 {
+            text-align: center
+        }
+
+        .logo1 ul {
+            display: inline-block
+        }
+
+        .logo1 ul li {
+            float: left;
+            list-style-type: none;
+        }
+
+        .logo1 ul li a {
+            display: block;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 60px;
+            padding-right: 60px;
+            margin-right: 10px;
+            text-decoration: none;
+            font-weight: bolder;
+            background-color: var(--c02);
+        }
+
+        .logo1 ul li a:hover {
+            background-color: var(--c03);
+            color: #000;
+        }
+
+        .content_in {
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            text-align: center;
+            background-color: #fff;
+            margin-top: 5px;
+        }
+
+        .content_in h1 {
+            color: red;
+            margin-bottom: 30px;
+        }
+
+        .content_in p {
+            font-size: 16px;
+            margin-bottom: 25px;
+        }
+
+        .content_in a {
+            display: block;
+            background-color: var(--c03);
+            width: 135px;
+            height: 40px;
+            /* margin: 0 auto;  */
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-left: auto;
+            margin-right: auto;
+            text-decoration: none;
+            color: #000;
+            font-size: 18px;
+            font-weight: bolder;
+            line-height: 40px;
+        }
+
+        .content_in a:hover {
+            background-color: red;
+            color: #fff;
+        }
+
+        .footer {
+            background-color: var(--c08);
+            color: var(--c04);
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 18px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            margin-top: 5px;
+            /* 通常都是P擠壓到上下的間距 */
+        }
+        @media screen and (max-width:1024px) {
+            .wrapper{
+                width: 95%;
+            }    
+        }
+        /* 讓畫面響應各種設備瀏覽的解析度(例如手機) 100%太貼 */
+ 

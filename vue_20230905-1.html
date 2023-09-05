@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/my.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="demo">
+            <h2>1. v-model 綁定</h2>
+            <!-- 可以實現監聽效果 -->
+            <input type="text" class="form-control" v-model="mytitle">
+            <p class="h3">你輸入的字為:<br>{{ mytitle }}</p>
+            <div v-text="mytitle"></div>
+            <!-- 可以支援html的語法<h1><br><b>之類的 -->
+            <div v-html="mytitle"></div>
+            <input type="text" class="form-control" v-model="mytitle01">
+            <!-- <input type="text" class="form-control" v-model="mytitle01"> -->
+        </div>
+        <!-- 2.v-bind 綁定 可用於圖片-->
+        <div class="demo">
+            <h2>2. v-bind(簡寫 :)</h2>
+            <img v-bind:src="imgSrc" alt="" class="w-25">
+            <img v-bind:src="imgSrc01" alt="" class="w-25">
+            <!-- <img v-bind:src="imgSrc02" alt="" v-bind:class="classW25">
+            <p :class="classh1">222</p> -->
+            <!-- 可以輸入圖片路徑或網址可以顯示圖片 -->
+            <img v-bind:src="imgSrc01" alt="" class="w-25">
+            <input type="text" class="form-control my-3" v-model="imgSrc01">
+        </div>
+        <!-- 3.v-if and v-for -->
+        <div class="demo">
+            <ul class="list-group">
+                <li class="list-group-item" v-for="(item, key) in list">
+                    {{ key+1 }}. {{ item.product }} 1斤 ==> {{ item.price }}元
+                </li>
+            </ul>
+            <!-- 顯示小於100元的水果 -->
+            <ul class="list-group my-3">
+                <template v-for="(item, key) in list">
+                    <li class="list-group-item" v-if="item.price < 100">
+                        {{ key+1 }}. {{ item.product }} 1斤 ==> {{ item.price }}元
+                    </li>
+                </template>
+            </ul>
+        </div>
+        <!-- 可以用true或false來判斷是否顯示內容 -->
+        <div class="h1" v-if="textShow">
+            {{ text02 }}
+        </div>
+        <hr>
+        <!-- 改變讓使用者選擇mylink裡的值來判斷active給誰 -->
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <!-- .prevent不會往上跳 -->
+                <a class="nav-link" href="#" v-on:click.prevent="mylink ='草莓'" v-bind:class="{'active' :mylink =='草莓'}">草莓</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" v-on:click.prevent="mylink ='香蕉'" v-bind:class="{'active' :mylink =='香蕉'}">香蕉</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" v-on:click.prevent="mylink ='西瓜'" v-bind:class="{'active' :mylink =='西瓜'}">西瓜</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" v-on:click.prevent="mylink ='水蜜桃'"
+                    v-bind:class="{'active' :mylink =='水蜜桃'}">水蜜桃</a>
+            </li>
+        </ul>
+        <!-- 顯示下面選取的水果 會顯示產地跟價錢 -->
+        <ul class="list-group my-3">
+            <template v-for="(item, key) in list">
+                <li class="list-group-item" v-if="item.product ==  mylink">
+                    {{ key+1 }}. {{ item.product }} 1斤 ==> {{ item.price }}元 // 產地 ==>{{ item.city }}
+                </li>
+            </template>
+        </ul>
+    </div>
+
+    <script src="js/js_bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const App = {
+            data() {
+                return {
+                    text01: 'hello',
+                    text02: 'world',
+                    mytitle: 'vue 教學示範',
+                    mytitle01: 'vue 綁定',
+                    imgSrc: 'images/hyundai-motor-group-Sx_bKz49IO0-unsplash.jpg',
+                    imgSrc01: 'images/sebastiano-corti-u3BDjnJvdVM-unsplash.jpg',
+                    imgSrc02: 'https://images.unsplash.com/photo-1682685797229-b2930538da47?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80',
+                    classW25: 'w-25',
+                    classW50: 'w-50',
+                    classh1: 'h1',
+                    textShow: false,
+                    mylink: '草莓',
+                    list: [
+                        {
+                            product: '草莓',
+                            price: 120,
+                            city: '台北市'
+                        },
+                        {
+                            product: '草莓',
+                            price: 100,
+                            city: '台南市'
+                        },
+                        {
+                            product: '香蕉',
+                            price: 120,
+                            city: '台中市'
+                        },
+                        {
+                            product: '香蕉',
+                            price: 90,
+                            city: '高雄市'
+                        },
+                        {
+                            product: '西瓜',
+                            price: 150,
+                            city: '桃園市'
+                        },
+                        {
+                            product: '西瓜',
+                            price: 130,
+                            city: '嘉義市'
+                        },
+                        {
+                            product: '水蜜桃',
+                            price: 80,
+                            city: '高雄市'
+                        },
+                        {
+                            product: '水蜜桃',
+                            price: 100,
+                            city: '台北市'
+                        },
+                    ]
+                }
+            }
+        }
+
+        Vue.createApp(App).mount('#app')
+
+
+    </script>
+</body>
+
+</html>

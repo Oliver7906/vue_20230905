@@ -1,0 +1,30 @@
+/* Css裡就不需要打<style> */
+:root{
+    --c01: #D1DDD8;
+    --c02: #85b8cb;
+    --c03: #1D6A96;
+    --c04: #283B42;
+    --c05: #BC5F6A;
+    /* 設定自己的顏色快捷 */
+}
+.box{
+    width: 200px;
+    height: 200px;
+    border: 2px solid var(--c02);
+}
+.box01{
+    width: 200px;
+    height: 200px;
+    border: 2px solid var(--c03);
+    padding:10px;
+    /* padding 內距 字跟框 */
+    box-sizing: border-box;
+    /* box-sizing: border-box可以讓有內距的格子限縮在尺寸內 */
+}
+.box02{
+    width: 150px;
+    height: 150px;
+    border: 2px solid yellow;
+    background-color: var(--c05);
+    /* background-color 背景顏色 */
+}
